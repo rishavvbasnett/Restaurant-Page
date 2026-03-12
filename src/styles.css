@@ -1,0 +1,71 @@
+body {
+    display: grid;
+    grid-template-rows: 40px minmax(500px, 1fr);
+    height:98vh;
+}
+header {
+    display: grid;
+    grid-template-columns: minmax(auto, 0.7fr);
+}
+header>.logo {
+    font-size: x-large;
+    font-weight: bold;
+    align-self: self-end;
+    padding-left: clamp(0.8rem, 2rem, 3rem);
+}
+nav>button {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: 1/2/2/3;
+}
+#content {
+    display: grid;
+    padding: clamp(50px, 5%, 6%) clamp(1rem, 10%, 21%);
+    grid-template-rows: minmax(auto, 0.2fr) minmax(200px, 1fr) auto;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    grid-template-areas: 
+    ". ."
+    "center img"
+    ". ."
+    ;
+    column-gap: 2rem;
+}
+
+#content>.center {
+    padding: 1.2rem;
+    grid-area: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.center h1 {
+    font-size: 2.1rem;
+}
+.center>p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: start;
+    letter-spacing: 1px;
+}
+#content>img {
+    grid-area: img;
+    align-self: start;
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 12px;
+}
+.center>button {
+    grid-area: button;
+    justify-self: start;
+    align-self: start;
+
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
