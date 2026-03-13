@@ -1,4 +1,3 @@
-import "./reset.css"
-import "./styles.css"
+import { pageLoad } from "./home.js";
 
-console.log("TEST TEST")
+pageLoad()
