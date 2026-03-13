@@ -1,8 +1,6 @@
 import "./reset.css"
-import "./styles.css"
 import homepageImg from "./images/homepageImg.jpg"
-
-console.log("TEST TEST")
+import { Menu } from "./menu.js"
 
 const HomePage = () => {
     const header = document.createElement("h1")
@@ -11,7 +9,7 @@ const HomePage = () => {
         header.style.color = "rgb(152, 96, 13)"
         header.style.textShadow = "0.5px 0.6px 0.7px black"
         header.style.fontSize = "2.3rem"
-        header.style.fontFamily = "logoFont"
+        header.style.fontFamily = '"logoFont", system-ui, "Segoe UI", Roboto, sans-serif'
 
     const leftBox = document.createElement("div")
         leftBox.classList.add("leftBox")
@@ -42,6 +40,20 @@ const HomePage = () => {
     leftBtn.style.alignItems = "center"
     leftBtn.style.fontWeight = "bold"
     leftBtn.style.boxShadow = "2px 3px 5px rgba(163, 155, 142, 0.7)"
+    leftBtn.id = "exploreMenu"
+
+    leftBtn.addEventListener("click", () => {
+        contentBox.replaceChildren()
+        const homeBtn = document.querySelector("nav>.home")
+            homeBtn.style.color = "rgb(96, 73, 3)"
+            homeBtn.style.backgroundColor = "rgb(234, 218, 153)"
+            homeBtn.style.transform = "scale(1)"
+        const menuBtn = document.querySelector("nav>.menu")
+            menuBtn.style.color = "rgb(233, 226, 204)"
+            menuBtn.style.backgroundColor = "rgb(94, 75, 2)"
+            menuBtn.style.transform = "scale(1.11)"
+        Menu()
+    })
 
     const rightBox = document.createElement("div")
         rightBox.classList.add("rightBox")

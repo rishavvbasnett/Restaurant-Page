@@ -27,6 +27,7 @@ header {
     font-weight: bold;
     color: hsl(40, 65%, 88%);
     text-shadow: 0.5px 0.6px 0.7px black;
+
 }
 
 nav {
@@ -55,6 +56,7 @@ nav>button:hover, .leftBox>button:hover {
     max-width: 900px;
     margin: 0 auto;
     padding: clamp(1rem, 5vw, 50px) clamp(1rem, 4vw, 60px);
+    
 }
 
 #contentHeading::first-letter {
