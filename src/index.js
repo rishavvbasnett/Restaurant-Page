@@ -11,6 +11,20 @@ const clear = function () {
 
 const headerBtns = document.querySelectorAll("nav>button")
     headerBtns.forEach(btn => {
+
+        /* hover event first*/
+        btn.addEventListener("mouseenter", e => {
+                btn.style.color = "rgb(233, 226, 204)"
+                btn.style.backgroundColor = "rgb(94, 75, 2)"
+                btn.style.transform = "scale(1.11)"
+        })
+        btn.addEventListener("mouseleave", e=> {
+                btn.style.color = "rgb(96, 73, 3)"
+                btn.style.backgroundColor = "rgb(234, 218, 153)"
+                btn.style.transform = "scale(1)"
+        })
+
+        /* Click event to tab current page, and call clicked page */
         btn.addEventListener("click", e => {
             headerBtns.forEach(button => {
                 button.style.color = "rgb(96, 73, 3)"
@@ -35,11 +49,4 @@ const headerBtns = document.querySelectorAll("nav>button")
         })
     })
 
-Menu()
-
-/* Add event on Explore Our Menu button to open Menu page */
-const exploreMenuBtn = document.querySelector("#exploreMenu")
-    exploreMenuBtn.addEventListener("click", () => {
-        console.log("yes")
-        Menu()
-    })
+HomePage()
