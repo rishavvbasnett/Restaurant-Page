@@ -1,8 +1,10 @@
 import "./reset.css"
 import homepageImg from "./images/homepageImg.jpg"
 import { Menu } from "./menu.js"
+import { navigate } from "./index.js"
 
 const HomePage = () => {
+    const contentBox = document.querySelector("#content")
     const header = document.createElement("h1")
         header.id = "contentHeading"
         header.textContent = "Welcome to Singha Thai"
@@ -43,16 +45,7 @@ const HomePage = () => {
     leftBtn.id = "exploreMenu"
 
     leftBtn.addEventListener("click", () => {
-        contentBox.replaceChildren()
-        const homeBtn = document.querySelector("nav>.home")
-            homeBtn.style.color = "rgb(96, 73, 3)"
-            homeBtn.style.backgroundColor = "rgb(234, 218, 153)"
-            homeBtn.style.transform = "scale(1)"
-        const menuBtn = document.querySelector("nav>.menu")
-            menuBtn.style.color = "rgb(233, 226, 204)"
-            menuBtn.style.backgroundColor = "rgb(94, 75, 2)"
-            menuBtn.style.transform = "scale(1.11)"
-        Menu()
+        navigate("menu")
     })
 
     const rightBox = document.createElement("div")
@@ -65,7 +58,6 @@ const HomePage = () => {
         rightImg.style.border = "3px solid rgb(87, 44, 3)"
 
     rightBox.appendChild(rightImg)
-    const contentBox = document.querySelector("#content")
     contentBox.appendChild(header)
 
     contentBox.appendChild(rightBox)
